@@ -1,5 +1,5 @@
-#ifndef GENERATEPROGRAMPROJECT_BAT_H
-#define GENERATEPROGRAMPROJECT_BAT_H
+#ifndef GENERATEPROGRAMPROJECT_BAT_H__
+#define GENERATEPROGRAMPROJECT_BAT_H__
 #include "../BaseProgramFile.h"
 
 const char* GENERATEROGRAMPROJECT_BAT_PATH=R"(\\)";
@@ -36,7 +36,7 @@ if exist "%UE_Engine_Dir%\Build\InstalledBuildA.txt" (
 
 )";
 
-class GenERateProgramProjectBatFile:public BaseProgramFile
+class GenerateProgramProjectBatFile:public BaseProgramFile
 {
 public:
     virtual void Init(const std::string& pProgramName)override
@@ -49,6 +49,6 @@ public:
     }
 };
 
-GenERateProgramProjectBatFile genERate_program_project_bat=GenERateProgramProjectBatFile();
+GenerateProgramProjectBatFile genERate_program_project_bat=GenerateProgramProjectBatFile();
 
 #endif

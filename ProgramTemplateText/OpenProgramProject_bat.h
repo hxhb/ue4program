@@ -1,5 +1,5 @@
-#ifndef OPENPROGRAMPROJECT_BAT_H
-#define OPENPROGRAMPROJECT_BAT_H
+#ifndef OPENPROGRAMPROJECT_BAT_H__
+#define OPENPROGRAMPROJECT_BAT_H__
 
 #include "../BaseProgramFile.h"
 
