@@ -2,18 +2,7 @@
 #include <vector>
 #include <string>
 #include "BaseProgramFile.h"
-
-#include "ProgramTemplateText/ProgramTemplate_Target_cs.h"
-#include "ProgramTemplateText/ProgramTemplate_Build_cs.h"
-#include "ProgramTemplateText/GenerateProgramProject_bat.h"
-#include "ProgramTemplateText/OpenProgramProject_bat.h"
-#include "ProgramTemplateText/Source/Public/ProgramTemplate_h.h"
-#include "ProgramTemplateText/Source/Public/ProgramTemplateLog_h.h"
-#include "ProgramTemplateText/Source/Public/RealExecutionMain_h.h"
-#include "ProgramTemplateText/Source/Private/ProgramTemplate_cpp.h"
-#include "ProgramTemplateText/Source/Private/RealExecutionMain_cpp.h"
-#include "ProgramTemplateText/Source/Private/Windows/WindowsMain_cpp.h"
-#include "ProgramTemplateText/Source/Private/Console/ConsoleMain_cpp.h"
+#include "ProgramTemplateText/AllProgramTemplateFiles.h"
 
 using namespace std;
 
