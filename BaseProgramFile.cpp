@@ -1,5 +1,7 @@
 #include "BaseProgramFile.h"
 
+std::vector<class BaseProgramFile*> BaseProgramFile::file_list;
+
 BaseProgramFile::BaseProgramFile()
 {
 	BaseProgramFile::file_list.push_back(this);

@@ -3,8 +3,6 @@
 #include <string>
 #include "BaseProgramFile.h"
 
-std::vector<class BaseProgramFile*> BaseProgramFile::file_list;
-
 #include "ProgramTemplateText/ProgramTemplate_Target_cs.h"
 #include "ProgramTemplateText/ProgramTemplate_Build_cs.h"
 #include "ProgramTemplateText/GenerateProgramProject_bat.h"
