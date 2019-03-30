@@ -14,12 +14,18 @@ public class ProgramTemplate : ModuleRules
 {
 	public ProgramTemplate(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PublicIncludePaths.Add("Runtime/Launch/Public");
-
-		PrivateIncludePaths.Add("Runtime/Launch/Private");		// For LaunchEngineLoop.cpp include
-		PrivateIncludePaths.Add("Programs/ProgramTemplate/Source");
-        PrivateIncludePaths.Add("Programs/ProgramTemplate/Source/Public");
-        PrivateIncludePaths.Add("Programs/ProgramTemplate/Source/Private");
+        PublicIncludePaths.AddRange(
+            new string[]
+            {
+                "Runtime/Launch/Public",
+                "Programs/ProgramTemplate/Source/Public",
+            });
+        PrivateIncludePaths.AddRange(
+            new string[]
+            {
+                "Runtime/Launch/Private",  // For LaunchEngineLoop.cpp include
+                "Programs/ProgramTemplate/Source/Private"
+            });
 
         PrivateDependencyModuleNames.AddRange(
             new string[] {

@@ -13,27 +13,46 @@ using System.Collections.Generic;
 [SupportedPlatforms(UnrealPlatformClass.All)]
 public class ProgramTemplateTarget : TargetRules
 {
-	public ProgramTemplateTarget(TargetInfo Target) : base(Target)
-	{
-		Type = TargetType.Program;
-		LinkType = TargetLinkType.Monolithic;
-		LaunchModuleName = "ProgramTemplate";
+    public ProgramTemplateTarget(TargetInfo Target) : base(Target)
+    {
+        Type = TargetType.Program;
+        LinkType = TargetLinkType.Monolithic;
+        LaunchModuleName = "ProgramTemplate";
         ExtraModuleNames.Add("EditorStyle");
+    }
 
+    public override void SetupGlobalEnvironment(
+        TargetInfo Target,
+        ref LinkEnvironmentConfiguration OutLinkEnvironmentConfiguration,
+        ref CPPEnvironmentConfiguration OutCPPEnvironmentConfiguration
+        )
+    {
         // Lean and mean
         bCompileLeanAndMeanUE = true;
 
-		// No editor or editor-only data is needed
-		bBuildEditor = false;
-		//bBuildWithEditorOnlyData = false;
+        // No editor or editor-only data is needed
+        bBuildEditor = false;
 
-		// Compile out references from Core to the rest of the engine
-		bCompileAgainstEngine = false;
-		bCompileAgainstCoreUObject = true;
+        // Whether to compile WITH_EDITORONLY_DATA disabled. Only Windows will use this, other platforms force this to false.
+        //bBuildWithEditorOnlyData = false;
+
+        // Compile out references from Core to the rest of the engine
+        bCompileAgainstEngine = false;
+
+        // Enabled for all builds that include the CoreUObject project. Disabled only when building standalone apps that only link with Core.
+        bCompileAgainstCoreUObject = true;
+
+        // Whether to include plugin support.
+        bCompileWithPluginSupport = true;
+
+        // Enable exceptions for all modules
+        bForceEnableExceptions = false;
+
+        // Enable RTTI for all modules.
+        // bForceEnableRTTI = true;
 
         // If ture the program entrance is WinMain,otherwise entrance is main
-        bIsBuildingConsoleApplication = true;
-
+        bIsBuildingConsoleApplication = false;
     }
 }
 )";
