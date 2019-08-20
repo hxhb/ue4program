@@ -5,6 +5,7 @@
 #include "ProgramTemplate_Build_cs.h"
 #include "GenerateProgramProject_bat.h"
 #include "OpenProgramProject_bat.h"
+#include "PullBinaries_Bat.h"
 #include "Resources/Resource_h.h"
 #include "Resources/Resource_rc.h"
 #include "Resources/VersionResource_inl.h"
