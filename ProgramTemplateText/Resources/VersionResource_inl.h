@@ -12,8 +12,8 @@ const char* VERSION_RESOURCE_H=R"(
 #ifndef APSTUDIO_INVOKED
 
 #include <windows.h>
-#include "../../../../Runtime/Launch/Resources/Windows/resource.h"
-#include "../../../../Runtime/Launch/Resources/Version.h"
+#include "../../../Runtime/Launch/Resources/Windows/resource.h"
+#include "../../../Runtime/Launch/Resources/Version.h"
 
 #define IDICON_ProgramTemplate 2000
 /////////////////////////////////////////////////////////////////////////////
