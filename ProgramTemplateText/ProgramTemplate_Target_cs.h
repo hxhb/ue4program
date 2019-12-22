@@ -19,14 +19,7 @@ public class ProgramTemplateTarget : TargetRules
         LinkType = TargetLinkType.Monolithic;
         LaunchModuleName = "ProgramTemplate";
         ExtraModuleNames.Add("EditorStyle");
-    }
 
-    public override void SetupGlobalEnvironment(
-        TargetInfo Target,
-        ref LinkEnvironmentConfiguration OutLinkEnvironmentConfiguration,
-        ref CPPEnvironmentConfiguration OutCPPEnvironmentConfiguration
-        )
-    {
         // Lean and mean
         bCompileLeanAndMeanUE = true;
 
@@ -53,6 +46,7 @@ public class ProgramTemplateTarget : TargetRules
 
         // If ture the program entrance is WinMain,otherwise entrance is main
         bIsBuildingConsoleApplication = false;
+
     }
 }
 )";
