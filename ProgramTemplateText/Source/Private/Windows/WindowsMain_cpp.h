@@ -12,10 +12,10 @@ const char* WINDOWSMAIN_CPP_H=R"(
 #include <windows.h>
 
 int WinMain(
-	_In_ HINSTANCE hInstance,
-	_In_opt_ HINSTANCE hPrevInstance,
-	_In_ LPSTR lpCmdLine,
-	_In_ int nShowCmd
+	_In_ HINSTANCE InhInstance,
+	_In_opt_ HINSTANCE InhPrevInstance,
+	_In_ LPSTR InlpCmdLine,
+	_In_ int InShowCmd
 )
 {
 	int resault=RealExecutionMain(GetCommandLineW());
