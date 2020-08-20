@@ -13,5 +13,5 @@ $ ue4program.exe $ProgramName
 ### build
 
 ```bash
-$ clang++ ue4program.cpp string_tools.cpp BaseProgramFile.cpp -o ue4program.exe
+$ clang++ ue4program.cpp string_tools.cpp BaseProgramFile.cpp -o ue4program.exe -std=c++11
 ```
