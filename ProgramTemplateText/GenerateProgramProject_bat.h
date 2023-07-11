@@ -27,8 +27,8 @@ echo Intermediate\ProjectFiles%current_dir_name%.* is cleaed.
 
 rem generate program solution
 echo Using UnrealBuildTool Generate Program "%current_dir_name%" VisualStudio Solution.
-echo %UE_Engine_Dir%\Binaries\DotNET\UnrealBuildTool.exe -notinstallengine -ProjectFiles %current_dir_name%
-cmd /c "%UE_Engine_Dir%\Binaries\DotNET\UnrealBuildTool.exe -notinstallengine -ProjectFiles %current_dir_name%"
+echo %UE_Engine_Dir%\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe -notinstallengine -ProjectFiles %current_dir_name%
+cmd /c "%UE_Engine_Dir%\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe -notinstallengine -ProjectFiles %current_dir_name%"
 
 if exist "%UE_Engine_Dir%\Build\InstalledBuildA.txt" (
   ren %UE_Engine_Dir%\Build\InstalledBuildA.txt %UE_Engine_Dir%\Build\InstalledBuild.txt 

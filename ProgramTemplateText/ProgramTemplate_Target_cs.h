@@ -18,10 +18,13 @@ public class ProgramTemplateTarget : TargetRules
         Type = TargetType.Program;
         LinkType = TargetLinkType.Monolithic;
         LaunchModuleName = "ProgramTemplate";
-        ExtraModuleNames.Add("EditorStyle");
+        if (bBuildEditor)
+		{
+			ExtraModuleNames.Add("EditorStyle");
+		}
 
-        // Lean and mean
-        bCompileLeanAndMeanUE = true;
+        // bCompileLeanAndMeanUE is deprecated. Set bBuildDeveloperTools to the opposite value instead.
+        bBuildDeveloperTools = false;
 
         // Whether to compile WITH_EDITORONLY_DATA disabled. Only Windows will use this, other platforms force this to false.
         //bBuildWithEditorOnlyData = false;
