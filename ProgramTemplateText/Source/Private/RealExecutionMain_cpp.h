@@ -13,11 +13,21 @@ IMPLEMENT_APPLICATION(ProgramTemplate, "ProgramTemplate");
 
 int RealExecutionMain(const TCHAR* pCmdLine)
 {
+	ON_SCOPE_EXIT
+	{
+		RequestEngineExit(TEXT("Exiting"));
+		FEngineLoop::AppPreExit();
+		FModuleManager::Get().UnloadModulesAtShutdown();
+		FEngineLoop::AppExit();
+	};
+
     std::cout << "Hello UE4!" << std::endl;
 
 	// init Engine
 	GEngineLoop.PreInit(GetCommandLineW());
 	FSlateApplication::InitializeAsStandaloneApplication(GetStandardStandaloneRenderer());
+
+	FSlateApplication::InitHighDPI(true);
 
 	// create a test window
 	FGlobalTabmanager::Get()->SetApplicationTitle(LOCTEXT("AppTitle", "ProgramTemplate"));
@@ -29,11 +39,18 @@ int RealExecutionMain(const TCHAR* pCmdLine)
 		
 	FSlateApplication::Get().AddWindow(MainWindow.ToSharedRef());
 
-	while (!GIsRequestingExit)
+	while (!IsEngineExitRequested())
 	{
+		BeginExitIfRequested();
+	
+		FTSTicker::GetCoreTicker().Tick(FApp::GetDeltaTime());
 		FSlateApplication::Get().Tick();
 		FSlateApplication::Get().PumpMessages();
 	}
+
+	MainWindow->HideWindow();
+
+	FCoreDelegates::OnExit.Broadcast();
 	FSlateApplication::Shutdown();
 
 	return 0;
